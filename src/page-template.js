@@ -29,3 +29,10 @@ module.exports = team => {
             </div>
         </div>
     </body>
+
+    </html>
+    `;
+};
+
+// Create Team Profile
+const createProfile = team => {
