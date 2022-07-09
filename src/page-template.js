@@ -74,3 +74,22 @@ const createProfile = team => {
         </div>
         `;
     };
+
+    // Create Intern Profile
+    const createIntern = intern => {
+        return `
+        <div class="card employee-card intern-card">
+            <div class="card-header text-center">
+                <h2 class="card-title">${intern.getName()}</h2>
+                <h4 class="card-title">Title: ${intern.getRole()}</h4>
+            </div>
+            <div class="card-body bg-light">
+                <ul class="list-group text-dark">
+                    <li class="list-group-item">ID: ${intern.getId()}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                    <li class="list-group-item">School: ${intern.getSchool()}</li>
+                </ul>
+            </div>
+        </div>
+        `;
+    };
