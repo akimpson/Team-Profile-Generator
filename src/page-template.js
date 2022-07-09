@@ -55,3 +55,22 @@ const createProfile = team => {
         </div>
         `;
     };
+
+    // Create Engineer Profile
+    const createEngineer = engineer => {
+        return `
+        <div class="card employee-card engineer-card">
+            <div class="card-header text-center">
+                <h2 class="card-title">${engineer.getName()}</h2>
+                <h4 class="card-title">Title: ${engineer.getRole()}</h4>
+            </div>
+            <div class="card-body bg-light">
+                <ul class="list-group text-dark">
+                    <li class="list-group-item">ID: ${engineer.getId()}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGitHub()}" target="_blank" rel="noopener noreferrer">${engineer.getGitHub()}</a></li>
+                </ul>
+            </div>
+        </div>
+        `;
+    };
