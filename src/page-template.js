@@ -1,4 +1,4 @@
-// Export function to generate HTML page
+// Export function to generate HTML page.
 module.exports = (team) => {
   return `
     <!DOCTYPE html>
@@ -32,7 +32,7 @@ module.exports = (team) => {
     `;
 };
 
-// Create Team Profile
+// Create Team Profile.
 const createProfile = (team) => {
   // Create Manager Profile
   const createManager = (manager) => {
@@ -53,7 +53,7 @@ const createProfile = (team) => {
         `;
   };
 
-  // Create Engineer Profile
+  // Create Engineer Profile.
   const createEngineer = (engineer) => {
     return `
         <div class="card employee-card engineer-card">
@@ -72,7 +72,7 @@ const createProfile = (team) => {
         `;
   };
 
-  // Create Intern Profile
+  // Create Intern Profile.
   const createIntern = (intern) => {
     return `
         <div class="card employee-card intern-card">
