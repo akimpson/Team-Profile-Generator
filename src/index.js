@@ -14,3 +14,7 @@ const DIST_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(DIST_DIR, "index.html");
 
 const render = require("./src/page-template.js");
+
+// Create empty arrays for team and id as place holders
+const teamArr = [];
+const idArr = [];
