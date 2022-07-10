@@ -80,3 +80,30 @@ function initApp() {
             addTeam();
         });
     }
+
+    // addTeam function after finish with addManager
+    function addTeam() {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "memberChoice",
+                message: "What would you like to add next?",
+                choices: [
+                    "Engineer",
+                    "Intern",
+                    "End application"
+                ]
+            }
+        ]).then(userChoice => {
+            switch (userChoice.memberChoice) {
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+                default:
+                    generateHTML();
+            }
+        });
+    }
