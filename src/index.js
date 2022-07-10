@@ -107,3 +107,116 @@ function initApp() {
             }
         });
     }
+
+    // add an Engineer when selected
+    function addEngineer() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "What's the engineer's name?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Engineer's name can't be left empty.";
+                }
+            },
+            {
+                type: "input",
+                name: "engineerId",
+                message: "What's the engineer's id?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter a valid Engineer's ID.";
+                }
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "What's the engineer's email?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Email address can't be empty.";
+                }
+            },
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "What's the engineer's GitHub username?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter the engineer's GitHub username.";
+                }
+            }
+        ]).then(answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+            teamArr.push(engineer);
+            idArr.push(answers.engineerId);
+            addTeam();
+        });
+    }
+
+    // Add an Intern when selected
+    function addIntern() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "internName",
+                message: "What's the intern's name?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least one character.";
+                }
+            },
+            {
+                type: "input",
+                name: "internId",
+                message: "What's the intern's id?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter a valid Intern's ID.";
+                }
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What's the intern's email?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Email address can't be empty.";
+                }
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "What's the intern's school?",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter a correct school.";
+                }
+            }
+
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            teamArr.push(intern);
+            idArr.push(answers.internId);
+            addTeam();
+        });
+    }
+    
+    function generateHTML() {
